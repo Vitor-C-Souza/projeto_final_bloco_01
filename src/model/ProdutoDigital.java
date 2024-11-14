@@ -6,8 +6,8 @@ public class ProdutoDigital extends Produto {
     private double tamanhoArquivo;
     private String formato;
 
-    public ProdutoDigital(Long id, String nome, BigDecimal preco, int estoque, double tamanhoArquivo, String formato) {
-        super(id, nome, preco, estoque);
+    public ProdutoDigital(String nome, BigDecimal preco, int estoque, double tamanhoArquivo, String formato) {
+        super(nome, preco, estoque);
         this.tamanhoArquivo = tamanhoArquivo;
         this.formato = formato;
     }

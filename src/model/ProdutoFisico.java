@@ -7,8 +7,8 @@ public class ProdutoFisico extends Produto {
     private String dimensoes;
 
 
-    public ProdutoFisico(Long id, String nome, BigDecimal preco, int estoque, double peso, String dimensoes) {
-        super(id, nome, preco, estoque);
+    public ProdutoFisico(String nome, BigDecimal preco, int estoque, double peso, String dimensoes) {
+        super(nome, preco, estoque);
         this.peso = peso;
         this.dimensoes = dimensoes;
     }

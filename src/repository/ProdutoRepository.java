@@ -1,18 +1,19 @@
 package repository;
 
-import model.ProdutoDigital;
-import model.ProdutoFisico;
+import java.math.BigDecimal;
 
 public interface ProdutoRepository {
-    void createFisico(ProdutoFisico produto);
+    void create(String nome, BigDecimal preco, int estoque, int tipo);
 
-    void createDigital(ProdutoDigital produto);
+    void findAll();
 
-    void readProdutos();
+    void findByNome(String nome);
 
-    void searchProdutoId(Long id);
+    void update(String nome, BigDecimal preco, int estoque, int tipo);
 
-    void updateProduto(Long id, ProdutoFisico produtoFisico, ProdutoDigital produtoDigital);
+    void delete(String nome);
 
-    void deleteProduto(Long id);
+    void buyItens(String nome);
+
+    void refund(String nome);
 }

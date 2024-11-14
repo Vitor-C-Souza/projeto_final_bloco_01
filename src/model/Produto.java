@@ -3,13 +3,11 @@ package model;
 import java.math.BigDecimal;
 
 public abstract class Produto {
-    private Long id;
     private String nome;
     private BigDecimal preco;
     private int estoque;
 
-    public Produto(Long id, String nome, BigDecimal preco, int estoque) {
-        this.id = id;
+    public Produto(String nome, BigDecimal preco, int estoque) {
         this.nome = nome;
         this.preco = preco;
         this.estoque = estoque;
@@ -19,21 +17,12 @@ public abstract class Produto {
         return preco.subtract(preco.multiply(BigDecimal.valueOf(percentual / 100)));
     }
 
-    @Override
-    public String toString() {
-        return "Produto{" +
-               "id=" + id +
-               ", nome='" + nome + '\'' +
-               ", preco=" + preco +
-               '}';
+    public void comprar() {
+        this.estoque--;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void devolver() {
+        this.estoque++;
     }
 
     public String getNome() {
@@ -58,5 +47,14 @@ public abstract class Produto {
 
     public void setEstoque(int estoque) {
         this.estoque = estoque;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+               "nome='" + nome + '\'' +
+               ", preco=" + preco +
+               ", estoque=" + estoque +
+               '}';
     }
 }
