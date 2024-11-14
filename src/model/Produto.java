@@ -51,10 +51,10 @@ public abstract class Produto {
 
     @Override
     public String toString() {
-        return "Produto{" +
-               "nome='" + nome + '\'' +
-               ", preco=" + preco +
-               ", estoque=" + estoque +
-               '}';
+        return String.format("""
+                Nome: %s
+                Preço: %.2f
+                Estoque: %s
+                """, this.nome, this.preco, this.estoque);
     }
 }

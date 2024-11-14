@@ -37,9 +37,11 @@ public class ProdutoFisico extends Produto {
 
     @Override
     public String toString() {
-        return "ProdutoFisico{" +
-               "peso=" + peso +
-               ", dimensoes='" + dimensoes + '\'' +
-               "} " + super.toString();
+        return String.format("""
+                %s
+                Detalhes:
+                    Peso : %.2f
+                    Dimensoes: %s
+                """, super.toString(), this.peso, this.dimensoes);
     }
 }

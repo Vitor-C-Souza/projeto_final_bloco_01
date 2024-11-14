@@ -40,9 +40,11 @@ public class ProdutoDigital extends Produto {
 
     @Override
     public String toString() {
-        return "ProdutoDigital{" +
-               "tamanhoArquivo=" + tamanhoArquivo +
-               ", formato='" + formato + '\'' +
-               "} " + super.toString();
+        return String.format("""
+                %s
+                Detalhes:
+                    Tamanho : %.2f
+                    Formato: %s
+                """, super.toString(), this.tamanhoArquivo, this.formato);
     }
 }

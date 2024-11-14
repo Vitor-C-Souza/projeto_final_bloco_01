@@ -56,7 +56,7 @@ public class ProdutoController implements ProdutoRepository {
     public void findAll() {
         System.out.println("Lista de produtos: ");
         for (Produto produto : produtos) {
-            System.out.println(produto);
+            System.out.println(produto + "\n");
         }
     }
 
