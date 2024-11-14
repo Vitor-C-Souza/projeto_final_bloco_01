@@ -1,11 +1,24 @@
+import model.ProdutoDigital;
+import model.ProdutoFisico;
+
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Menu {
     public static void main(String[] args) {
+
+        //Testes
+        ProdutoFisico fisico = new ProdutoFisico(1L, "sapato", new BigDecimal("150"), 10, 480, "40x40");
+        System.out.println(fisico);
+        System.out.println("Com desconto: " + fisico.calcularDesconto(15, 5));
+        ProdutoDigital digital = new ProdutoDigital(1L, "God of War", new BigDecimal("300"), 15, 120, "exe");
+        System.out.println(digital);
+        System.out.println("Com desconto: " + digital.calcularDesconto(30, true));
+
         Scanner read = new Scanner(System.in);
-        
-        do{
+
+        do {
             System.out.println("""
                     *************************************************************************
                                     Loja Vítor tem tudo
@@ -23,7 +36,7 @@ public class Menu {
                     """);
             int opcao = read.nextInt();
 
-            switch (opcao){
+            switch (opcao) {
                 case 1 -> {
                     System.out.println("Sessão de criar produto!");
 
@@ -66,7 +79,7 @@ public class Menu {
                 default -> System.out.println("Opção invalida");
 
             }
-        } while(true);
+        } while (true);
     }
 
     private static void keyPress() {
